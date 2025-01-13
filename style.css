@@ -1,0 +1,313 @@
+/* ================================= */
+/* GENERAL */
+/* ================================= */
+/* Root selector for defining global CSS variables */
+:root {
+    --clr-dark: #333;
+    /* Dark color for text in light mode, background in dark mode */
+    --clr-light: #fff;
+    /*  Light color for background in light mode, text in dark mode */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+    background-color: white;
+    color: #333; /* Donkergrijs voor tekst */
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #d3d3d3; /* Lichtgrijs voor tekst */
+}
+
+#sidebar {
+    transition: background-color 0.3s, color 0.3s;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+
+}
+
+body.light-mode #sidebar {
+    background-color: #b0e0e6; /* Lichtblauw/blauwgroen */
+    color: #333; /* Donkergrijs voor tekst */
+}
+
+body.light-mode #sidebar a {
+    color: #333; /* Donkergrijs voor links */
+}
+
+body.light-mode #sidebar a:hover {
+    color: #000; /* Zwart voor hover */
+}
+
+body.dark-mode #sidebar {
+    background-color: #003366; /* DeepZee blauw */
+    color: #d3d3d3; /* Lichtgrijs voor tekst */
+}
+
+body.dark-mode #sidebar a {
+    color: #d3d3d3; /* Lichtgrijs voor links */
+}
+
+body.dark-mode #sidebar a:hover {
+    color: #555; /* Donkergrijs voor hover */
+}
+
+.nav-link {
+    transition: color 0.3s;
+}
+
+body.light-mode .nav-link {
+    color: #333; /* Donkergrijs voor links */
+}
+
+body.light-mode .nav-link:hover {
+    color: #000; /* Zwart voor hover */
+}
+
+body.dark-mode .nav-link {
+    color: #d3d3d3; /* Lichtgrijs voor links */
+}
+
+body.dark-mode .nav-link:hover {
+    color: #555; /* Donkergrijs voor hover */
+}
+
+.scrollspy {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode .scrollspy {
+    background-color: #b0e0e6; /* Lichtblauw/blauwgroen */
+    color: #333; /* Donkergrijs voor tekst */
+}
+
+body.dark-mode .scrollspy {
+    background-color: #003366; /* DeepZee blauw */
+    color: #d3d3d3; /* Lichtgrijs voor tekst */
+}
+
+.footer {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode .footer {
+    background-color: #f1f1f1;
+    color: #333; /* Donkergrijs voor tekst */
+}
+
+body.light-mode .footer a {
+    color: #333; /* Donkergrijs voor links */
+}
+
+body.dark-mode .footer {
+    background-color: #222222;
+    color: #d3d3d3; /* Lichtgrijs voor tekst */
+}
+
+body.dark-mode .footer a {
+    color: #d3d3d3; /* Lichtgrijs voor links */
+}
+
+.card {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode .card {
+    background-color: white;
+    color: #333; /* Donkergrijs voor tekst */
+}
+
+body.light-mode .card a {
+    color: #333; /* Donkergrijs voor links */
+}
+
+body.dark-mode .card {
+    background-color: #2a2a2a;
+    color: #d3d3d3; /* Lichtgrijs voor tekst */
+}
+
+body.dark-mode .card a {
+    color: #d3d3d3; /* Lichtgrijs voor links */
+}
+
+/* ================================= */
+/* section hero */
+/* ================================= */
+
+
+/* ================================= */
+
+/* ================================= */
+/* section hero */
+/* ================================= */
+
+
+/* ================================= */
+/* section hero */
+/* ================================= */
+
+.hero {
+    margin: 0px;
+    text-align: center;
+}
+
+/* ================================= */
+/* spacing between skills and projects */
+/* ================================= */
+
+.skills,
+.projects {
+    padding: 50px 0;
+}
+
+.skills {
+    margin-bottom: 50px;
+    /* Spacing tussen skills en projects */
+}
+
+/* ================================= */
+/* WALKING & ARMS-UP ANIMATIONS */
+/* ================================= */
+
+.bi-animated {
+    transform-origin: center bottom;
+    animation: walk-cycle 1s steps(2) infinite;
+}
+
+@keyframes walk-cycle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(7deg);
+    }
+
+    50% {
+        transform: rotate(deg);
+    }
+
+    75% {
+        transform: rotate(-7deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.d-none {
+    display: none;
+}
+
+.walking-name {
+    display: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.walking-animation {
+    position: absolute;
+    left: -100px;
+    animation: move-walk 15s linear infinite;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.moving-label {
+    display: inline-block;
+}
+
+@keyframes move-walk {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(99vw);
+    }
+}
+
+/* ================================= */
+/* FANCY BUTTON */
+/* ================================= */
+
+.fancy-button {
+    background-color: #d6181894;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.fancy-button:hover {
+    background-color: #a41313da;
+}
+
+
+/* ================================= */
+/* settings */
+/* ================================= */
+/* Container for centering content */
+.containerSetting {
+    text-align: center;
+}
+
+/* Heading styles */
+.textSetting {
+    margin-bottom: 20px;
+}
+
+
+/* Styles for dark mode */
+.dark-mode {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+/* Styles for the toggle container */
+.toggle-container {
+    cursor: pointer;
+}
+
+/* Styles for the sun and moon icons */
+.sun-icon,
+.moon-icon {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s;
+}
+
+/* Hide moon icon by default (light mode) */
+.moon-icon {
+    display: none;
+}
+
+/* Show moon icon and hide sun icon in dark mode */
+.dark-mode .sun-icon {
+    display: none;
+}
+
+.dark-mode .moon-icon {
+    display: inline-block;
+}
