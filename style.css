@@ -1,12 +1,9 @@
 /* ================================= */
 /* GENERAL */
 /* ================================= */
-/* Root selector for defining global CSS variables */
 :root {
     --clr-dark: #333;
-    /* Dark color for text in light mode, background in dark mode */
     --clr-light: #fff;
-    /*  Light color for background in light mode, text in dark mode */
 }
 
 body {
@@ -16,156 +13,265 @@ body {
     align-items: center;
     margin: 0;
     transition: background-color 0.3s, color 0.3s;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Default */
 }
 
 body.light-mode {
     background-color: white;
-    color: #333; /* Donkergrijs voor tekst */
+    color: #333;
 }
 
 body.dark-mode {
     background-color: #121212;
-    color: #d3d3d3; /* Lichtgrijs voor tekst */
+    color: #d3d3d3;
 }
 
+/* ================================= */
+/* SIDEBAR */
+/* ================================= */
 #sidebar {
     transition: background-color 0.3s, color 0.3s;
     position: sticky;
     top: 0;
     height: 100vh;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+#sidebar ul.nav li.nav-item {
+    display: flex;
+    align-items: bottom;
+    margin-bottom: 5px;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 5;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    #sidebar.collapse.show {
+        display: block;
+    }
+
+    #sidebar ul {
+        flex-direction: row;
+        justify-content: left;
+    }
+
+    #sidebar .nav-link {
+        text-align: left;
+        padding: 10px;
+    }
 }
 
 body.light-mode #sidebar {
-    background-color: #b0e0e6; /* Lichtblauw/blauwgroen */
-    color: #333; /* Donkergrijs voor tekst */
+    background-color: #b0e0e6;
+    color: #333;
 }
 
 body.light-mode #sidebar a {
-    color: #333; /* Donkergrijs voor links */
+    color: #333;
 }
 
 body.light-mode #sidebar a:hover {
-    color: #000; /* Zwart voor hover */
+    color: #000;
 }
 
 body.dark-mode #sidebar {
-    background-color: #003366; /* DeepZee blauw */
-    color: #d3d3d3; /* Lichtgrijs voor tekst */
+    background-color: #003366;
+    color: #d3d3d3;
 }
 
 body.dark-mode #sidebar a {
-    color: #d3d3d3; /* Lichtgrijs voor links */
+    color: #d3d3d3;
 }
 
 body.dark-mode #sidebar a:hover {
-    color: #555; /* Donkergrijs voor hover */
+    color: #555;
 }
 
+/* ================================= */
+/* NAVIGATION LINKS */
+/* ================================= */
 .nav-link {
     transition: color 0.3s;
+    color: #333;
 }
 
 body.light-mode .nav-link {
-    color: #333; /* Donkergrijs voor links */
+    color: #333;
 }
 
 body.light-mode .nav-link:hover {
-    color: #000; /* Zwart voor hover */
+    color: #000;
 }
 
 body.dark-mode .nav-link {
-    color: #d3d3d3; /* Lichtgrijs voor links */
+    color: #d3d3d3;
 }
 
 body.dark-mode .nav-link:hover {
-    color: #555; /* Donkergrijs voor hover */
+    color: #555;
 }
 
+/* ================================= */
+/* SCROLLSPY */
+/* ================================= */
 .scrollspy {
     transition: background-color 0.3s, color 0.3s;
 }
 
 body.light-mode .scrollspy {
-    background-color: #b0e0e6; /* Lichtblauw/blauwgroen */
-    color: #333; /* Donkergrijs voor tekst */
+    background-color: #b0e0e6;
+    color: #333;
 }
 
 body.dark-mode .scrollspy {
-    background-color: #003366; /* DeepZee blauw */
-    color: #d3d3d3; /* Lichtgrijs voor tekst */
+    background-color: #003366;
+    color: #d3d3d3;
 }
 
+/* ================================= */
+/* FOOTER */
+/* ================================= */
 .footer {
     transition: background-color 0.3s, color 0.3s;
 }
 
 body.light-mode .footer {
     background-color: #f1f1f1;
-    color: #333; /* Donkergrijs voor tekst */
+    color: #333;
 }
 
 body.light-mode .footer a {
-    color: #333; /* Donkergrijs voor links */
+    color: #333;
 }
 
 body.dark-mode .footer {
     background-color: #222222;
-    color: #d3d3d3; /* Lichtgrijs voor tekst */
+    color: #d3d3d3;
 }
 
 body.dark-mode .footer a {
-    color: #d3d3d3; /* Lichtgrijs voor links */
+    color: #d3d3d3;
 }
 
+/* ================================= */
+/* CARD */
+/* ================================= */
 .card {
     transition: background-color 0.3s, color 0.3s;
 }
 
 body.light-mode .card {
     background-color: white;
-    color: #333; /* Donkergrijs voor tekst */
+    color: #333;
 }
 
 body.light-mode .card a {
-    color: #333; /* Donkergrijs voor links */
+    color: #333;
 }
 
 body.dark-mode .card {
     background-color: #2a2a2a;
-    color: #d3d3d3; /* Lichtgrijs voor tekst */
+    color: #d3d3d3;
 }
 
 body.dark-mode .card a {
-    color: #d3d3d3; /* Lichtgrijs voor links */
+    color: #d3d3d3;
 }
 
 /* ================================= */
-/* section hero */
+/* DROPDOWN MENU */
 /* ================================= */
+.menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
 
+.menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.menu {
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    z-index: 999;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+}
+
+.menu.open {
+    max-height: 500px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 4;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+    .menu {
+        top: 20px;
+        left: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu {
+        top: 30px;
+        left: 30px;
+    }
+}
 
 /* ================================= */
-
+/* SECTION HERO */
 /* ================================= */
-/* section hero */
-/* ================================= */
-
-
-/* ================================= */
-/* section hero */
-/* ================================= */
-
-.hero {
+.HeroText {
     margin: 0px;
     text-align: center;
 }
 
 /* ================================= */
-/* spacing between skills and projects */
+/* SPACING BETWEEN SKILLS AND PROJECTS */
 /* ================================= */
-
 .skills,
 .projects {
     padding: 50px 0;
@@ -173,13 +279,15 @@ body.dark-mode .card a {
 
 .skills {
     margin-bottom: 50px;
-    /* Spacing tussen skills en projects */
+}
+
+.CertificatesText {
+    margin-bottom: 25px;
 }
 
 /* ================================= */
 /* WALKING & ARMS-UP ANIMATIONS */
 /* ================================= */
-
 .bi-animated {
     transform-origin: center bottom;
     animation: walk-cycle 1s steps(2) infinite;
@@ -189,19 +297,15 @@ body.dark-mode .card a {
     0% {
         transform: rotate(0deg);
     }
-
     25% {
         transform: rotate(7deg);
     }
-
     50% {
-        transform: rotate(deg);
+        transform: rotate(0deg);
     }
-
     75% {
         transform: rotate(-7deg);
     }
-
     100% {
         transform: rotate(0deg);
     }
@@ -209,14 +313,6 @@ body.dark-mode .card a {
 
 .d-none {
     display: none;
-}
-
-.walking-name {
-    display: none;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #000;
 }
 
 .walking-animation {
@@ -235,7 +331,6 @@ body.dark-mode .card a {
     0% {
         transform: translateX(-100%);
     }
-
     100% {
         transform: translateX(99vw);
     }
@@ -244,7 +339,6 @@ body.dark-mode .card a {
 /* ================================= */
 /* FANCY BUTTON */
 /* ================================= */
-
 .fancy-button {
     background-color: #d6181894;
     border: none;
@@ -264,33 +358,26 @@ body.dark-mode .card a {
     background-color: #a41313da;
 }
 
-
 /* ================================= */
-/* settings */
+/* SETTINGS */
 /* ================================= */
-/* Container for centering content */
 .containerSetting {
     text-align: center;
 }
 
-/* Heading styles */
 .textSetting {
     margin-bottom: 20px;
 }
 
-
-/* Styles for dark mode */
 .dark-mode {
     background-color: var(--clr-dark);
     color: var(--clr-light);
 }
 
-/* Styles for the toggle container */
 .toggle-container {
     cursor: pointer;
 }
 
-/* Styles for the sun and moon icons */
 .sun-icon,
 .moon-icon {
     width: 24px;
@@ -298,16 +385,14 @@ body.dark-mode .card a {
     transition: opacity 0.3s;
 }
 
-/* Hide moon icon by default (light mode) */
 .moon-icon {
     display: none;
 }
 
-/* Show moon icon and hide sun icon in dark mode */
 .dark-mode .sun-icon {
     display: none;
 }
 
 .dark-mode .moon-icon {
-    display: inline-block;
+    display: inline;
 }
